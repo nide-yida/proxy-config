@@ -1,9 +1,17 @@
-# Google Gemini / Google AI (Quantumult X)
+# === Google Gemini / Google AI ===
+# 网页版与 API
+host, gemini.google.com, Gemini
+host, ai.google.com, Gemini
+host, aistudio.google.com, Gemini
+host, makersuite.google.com, Gemini
 
-host-suffix, gemini.google.com
-host-suffix, ai.google.com
-host-suffix, aistudio.google.com
-host-suffix, makersuite.google.com
-host-suffix, deepmind.google
-host-suffix, googleapis.com
-host-suffix, googleusercontent.com
+# DeepMind 专项
+host-suffix, deepmind.com, Gemini
+host-suffix, deepmind.google, Gemini
+
+# AI 核心链路 (精准匹配，避免误伤整个 googleapis)
+host-keyword, generativelanguage, Gemini
+host-keyword, alembic, Gemini
+
+# 静态资源与图片 (Gemini 专用)
+host, gemini-images.googleusercontent.com, Gemini
