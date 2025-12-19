@@ -1,0 +1,9 @@
+# Google Gemini / Google AI (Quantumult X)
+
+host-suffix, gemini.google.com
+host-suffix, ai.google.com
+host-suffix, aistudio.google.com
+host-suffix, makersuite.google.com
+host-suffix, deepmind.google
+host-suffix, googleapis.com
+host-suffix, googleusercontent.com
