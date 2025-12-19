@@ -1,0 +1,150 @@
+#============== Quantumult X Config ==============#
+# Author        : nide-yida
+# Repository    : https://github.com/nide-yida/proxy-config
+# @TgChannel    : https://t.me/TXTDZS
+# Last Update   : 2025-12-20
+#================================================#
+
+########################################
+[general]
+server_check_url=http://cp.cloudflare.com/generate_204
+server_check_timeout=2000
+
+# 你自己的配置头像（按你要求：用你仓库图标）
+profile_img_url=https://raw.githubusercontent.com/nide-yida/proxy-config/main/icons/Services/Proxy.png
+
+# 资源解析器（可留着）
+resource_parser_url=https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/resource-parser.js
+
+excluded_routes=192.168.0.0/16,10.0.0.0/8,127.0.0.1/32,239.255.255.250/32
+udp_whitelist=1-65535
+
+
+########################################
+[dns]
+no-system
+no-ipv6
+server=119.29.29.29
+server=223.5.5.5
+doh-server=https://doh.pub/dns-query, https://dns.alidns.com/dns-query
+
+
+########################################
+# 策略组 / Policy
+[policy]
+
+# ===== 节点池（你的机场订阅导入后会自动进来）=====
+static=全部节点, proxy, img-url=https://raw.githubusercontent.com/nide-yida/proxy-config/main/icons/Services/Proxy.png
+
+# ===== 基础入口 =====
+static=策略选择, 延迟最低, 负载均衡, 全部节点, 直连模式, 拦截模式, img-url=https://raw.githubusercontent.com/nide-yida/proxy-config/main/icons/Services/Back.png
+
+# ===== 自动策略 =====
+url-latency-benchmark=延迟最低, server-tag-regex=^((?!(网易|网易云|音乐|流量|订阅|购买|官网|邀请|加群)).)*$, check-interval=600, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/nide-yida/proxy-config/main/icons/Services/Delay.png
+dest-hash=负载均衡, server-tag-regex=^((?!(网易|网易云|音乐|流量|订阅|购买|官网|邀请|加群)).)*$, img-url=https://raw.githubusercontent.com/nide-yida/proxy-config/main/icons/Services/SSID.png
+
+# ===== 地区（按你 Loon 逻辑对标）=====
+url-latency-benchmark=美国节点, server-tag-regex=(?i)(🇺🇸|US|United States|美国), check-interval=600, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/nide-yida/proxy-config/main/icons/flags/US.png
+url-latency-benchmark=日本节点, server-tag-regex=(?i)(🇯🇵|JP|Japan|日本), check-interval=600, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/nide-yida/proxy-config/main/icons/flags/JP.png
+url-latency-benchmark=新加坡节点, server-tag-regex=(?i)(🇸🇬|SG|Singapore|新加坡), check-interval=600, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/nide-yida/proxy-config/main/icons/flags/SG.png
+url-latency-benchmark=香港节点, server-tag-regex=(?i)(🇭🇰|HK|Hong Kong|香港), check-interval=600, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/nide-yida/proxy-config/main/icons/flags/HK.png
+url-latency-benchmark=台湾节点, server-tag-regex=(?i)(🇹🇼|TW|Taiwan|台湾), check-interval=600, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/nide-yida/proxy-config/main/icons/flags/TW.png
+
+# ===== AI（你要的：独立策略组 + 图标）=====
+static=ChatGPT, 美国节点, 日本节点, 全部节点, 策略选择, img-url=https://raw.githubusercontent.com/nide-yida/proxy-config/main/icons/AI/ChatGPT.png
+static=Gemini, 日本节点, 台湾节点, 新加坡节点, 美国节点, 全部节点, 策略选择, img-url=https://raw.githubusercontent.com/nide-yida/proxy-config/main/icons/AI/Gemini.png
+static=AppleAI, 美国节点, 日本节点, 新加坡节点, 全部节点, 策略选择, img-url=https://raw.githubusercontent.com/nide-yida/proxy-config/main/icons/AI/Intelligence.png
+
+# ===== Services（对标你 Loon 的分组）=====
+static=Google, 香港节点, 台湾节点, 美国节点, 日本节点, 全部节点, 策略选择, img-url=https://raw.githubusercontent.com/nide-yida/proxy-config/main/icons/Services/Google.png
+static=Telegram, 香港节点, 台湾节点, 日本节点, 全部节点, 策略选择, img-url=https://raw.githubusercontent.com/nide-yida/proxy-config/main/icons/Services/Telegram.png
+static=Instagram, 香港节点, 台湾节点, 日本节点, 美国节点, 全部节点, 策略选择, img-url=https://raw.githubusercontent.com/nide-yida/proxy-config/main/icons/Services/Instagram.png
+static=Facebook, 香港节点, 台湾节点, 日本节点, 美国节点, 全部节点, 策略选择, img-url=https://raw.githubusercontent.com/nide-yida/proxy-config/main/icons/Services/Facebook.png
+
+# ===== Streaming =====
+static=Netflix, 新加坡节点, 香港节点, 日本节点, 美国节点, 全部节点, 策略选择, img-url=https://raw.githubusercontent.com/nide-yida/proxy-config/main/icons/Services/Netflix.png
+static=YouTube, 香港节点, 日本节点, 美国节点, 新加坡节点, 全部节点, 策略选择, img-url=https://raw.githubusercontent.com/nide-yida/proxy-config/main/icons/Services/YouTube.png
+static=Disney, 香港节点, 日本节点, 美国节点, 新加坡节点, 全部节点, 策略选择, img-url=https://raw.githubusercontent.com/nide-yida/proxy-config/main/icons/Services/Disney.png
+
+# ===== 兜底 =====
+static=直连模式, direct, img-url=https://raw.githubusercontent.com/nide-yida/proxy-config/main/icons/Services/DIRECT.png
+static=拦截模式, reject, direct, img-url=https://raw.githubusercontent.com/nide-yida/proxy-config/main/icons/Services/REJECT.png
+
+# 注意：不要把策略组命名成 Proxy（容易和内置 proxy 混淆）
+static=代理, 策略选择, 全部节点, 直连模式, img-url=https://raw.githubusercontent.com/nide-yida/proxy-config/main/icons/Services/Proxy.png
+
+
+########################################
+# Servers（必须存在，可留空）
+[server_local]
+# 本地节点（可留空）
+
+[server_remote]
+# 在这里粘贴你的机场订阅（示例）
+
+
+########################################
+# 本地分流（最小 + 关键兜底）
+[filter_local]
+# 你自己的广告关键词（对标 Loon）
+host-keyword, pangolin, 拦截模式
+host-keyword, adview, 拦截模式
+
+# GeoIP CN 直连
+geoip, cn, 直连模式
+
+# 兜底走代理
+final, 代理
+
+
+########################################
+# 远程分流（按你要求：AI / Apple / Gemini 指向 blackmatrix7 的 QuantumultX 规则）
+[filter_remote]
+
+# ChatGPT / OpenAI（QuantumultX 专用规则）
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/OpenAI/OpenAI.list, tag=ChatGPT, force-policy=ChatGPT, update-interval=172800, opt-parser=false, enabled=true
+
+# Apple（QuantumultX 专用规则）
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Apple/Apple.list, tag=AppleAI, force-policy=AppleAI, update-interval=172800, opt-parser=false, enabled=true
+
+# Gemini：BM7 目前没有稳定“单独 Gemini.list”可保证命名一致时，
+# 这里用 BM7 Google 规则兜底（覆盖 Google 体系），同时你可在 filter_local 里继续加 gemini 域名精细化
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Google/Google.list, tag=Gemini, force-policy=Gemini, update-interval=172800, opt-parser=false, enabled=true
+
+
+########################################
+# Rewrite（必须存在，可留空）
+[rewrite_local]
+
+[rewrite_remote]
+
+
+########################################
+# Task（必须存在，可留空）
+[task_local]
+
+
+########################################
+# http_backend（必须存在，可留空）
+[http_backend]
+
+
+####################################
+# MITM
+####################################
+[mitm]
+hostname = api.openai.com, chatgpt.com, gemini.google.com
+# 跳过证书验证
+# 开启 mitm，需要自行在Quantumult X中生成证书、安装、信任
+skip_validating_cert = false
+force_sni_domain_name = false
+
+
+# 添加主机名
+hostname = sub.store
+
+########################################
+# passphrase和p12代为证书&主机名部分，可去UI界面自行生成并安装证书，会在此生成对应信息，也可在更新配置前可把旧的配置中passphrase和p12代码拷贝下来, 导入新的配置文件把内容粘贴在对应位置就不用重装证书。
+
+passphrase = 55D9F485
+
