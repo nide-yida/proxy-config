@@ -1,0 +1,11 @@
+DOMAIN-SUFFIX,apple.com
+DOMAIN-SUFFIX,icloud.com
+DOMAIN-SUFFIX,icloud-content.com
+
+# Apple Intelligence / Siri
+DOMAIN,apple-relay.apple.com
+DOMAIN,apple-relay.fastly-edge.com
+DOMAIN,apple-relay.cloudflare.com
+DOMAIN,gateway.icloud.com
+DOMAIN,guzzoni.apple.com
+DOMAIN,gspe1-ssl.ls.apple.com
