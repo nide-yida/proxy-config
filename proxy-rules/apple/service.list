@@ -1,0 +1,14 @@
+# Apple Services (Non-System, Non-Update)
+
+DOMAIN-SUFFIX,apple.com
+DOMAIN-SUFFIX,appleicloud.com
+DOMAIN-SUFFIX,icloud.com
+DOMAIN-SUFFIX,icloud-content.com
+
+DOMAIN-SUFFIX,appstore.com
+DOMAIN-SUFFIX,apps.apple.com
+DOMAIN-SUFFIX,itunes.apple.com
+
+DOMAIN-SUFFIX,me.com
+DOMAIN-SUFFIX,cdn-apple.com
+DOMAIN-SUFFIX,apple-dns.net
