@@ -1,3 +1,12 @@
-DOMAIN,gemini.google.com
+# =========================
+# Google Gemini
+# =========================
+
+DOMAIN-SUFFIX,google.com
 DOMAIN-SUFFIX,googleapis.com
-DOMAIN-SUFFIX,deepmind.google
+DOMAIN-SUFFIX,googleusercontent.com
+
+# Gemini specific
+DOMAIN,gemini.google.com
+DOMAIN,ai.google.dev
+DOMAIN-SUFFIX,deepmind.com
