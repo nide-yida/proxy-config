@@ -1,7 +1,7 @@
+# ---- 彻底拦截 iOS 系统更新 ----
+DOMAIN,appldnld.apple.com
 DOMAIN,mesu.apple.com
 DOMAIN,gdmf.apple.com
 DOMAIN,updates-http.cdn-apple.com
+DOMAIN,updates.cdn-apple.com
 DOMAIN,xp.apple.com
-DOMAIN,appldnld.apple.com
-DOMAIN,swcdn.apple.com
-DOMAIN,swdownload.apple.com
